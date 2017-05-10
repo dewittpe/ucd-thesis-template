@@ -1,0 +1,164 @@
+% ---------------------------------------------------------------------------- %
+% file: disseration-coadvisors.tex
+% author: Peter DeWitt
+%
+% LaTeX based on work by Sarah Kreidler and Peter DeWitt
+% (github.com/dewittpe/ucd-dissertation-template)
+%
+% This is an example with Co-Advisors.  See dissertation.tex if you have a
+% single advisor.
+%
+% ---------------------------------------------------------------------------- %
+
+\documentclass[english,10pt]{ucdenver-dissertation-coadvisors}
+\input{usepackages}
+\input{newcommands}
+
+\usepackage{lipsum}
+
+\widowpenalty=10000
+\clubpenalty=10000
+\renewcommand{\floatpagefraction}{0.7}%
+
+% Draft and Time stamp in the header and footer.
+% \usepackage{fancyhdr}
+% \usepackage{datetime}
+% \lhead{\color{red} DRAFT: \today; \currenttime}
+% \rfoot{\color{red} DRAFT: \today; \currenttime}
+
+% \doublespacing
+\onehalfspacing
+
+% ---------------------------------------------------------------------------- %
+% FRONT MATTER i
+
+\makeatletter
+\title{My Kickass PhD Dissertation}
+\authorLast{Student}
+\authorFirst{Sealy}
+\authorMiddle{Q.}
+\education{
+B.S., Undergraduate University, 2005 \\
+M.S., University of Graduate School, 2007
+}
+\school{Colorado School of Public Health}
+\program{Biostatistics}
+\date{2017}
+\submitDate{19 May 2017}
+\advisor{Advisor One}
+\advisorTitle{Associate Professor}
+\coadvisor{Advisor Two}
+\coadvisorTitle{Professor}
+\committeeChair{Wooden Seat}
+\committeeMembers{
+Jane Smith \\ 
+H. Jay Simpson
+}
+
+% acknowledgement - this is optional
+\acknowledgements{ 
+  Thank you to someone for something.
+  \lipsum[1]
+}
+
+% dedication - this is also optional
+\dedication{For a super special and Imporant person or persons.}
+
+% preface
+\preface{
+  \lipsum[3]
+}
+
+\usepackage{array}
+\renewcommand\arraystretch{0.5}
+
+\makeatother
+
+% ---------------------------------------------------------------------------- %
+% ---------------------------------------------------------------------------- %
+% Begin Document 
+\begin{document}
+
+\input{chapter01.tex}
+\input{chapter02.tex}
+\input{chapter03.tex}
+\input{chapter04.tex}
+\input{chapter05.tex}
+
+% ---------------------------------------------------------------------------- %
+\renewcommand\bibname{REFERENCES}
+\singlespacing
+
+\nocite{*}
+\bibliographystyle{ucdDissertation}
+\bibliography{references,r-references}
+
+\doublespacing
+
+% ---------------------------------------------------------------------------- %
+% had to do some TOC shenanigans, so please use the ucdappendix command instead
+% of regular old \appendix
+\ucdappendix
+
+\chapter{\uppercase{Abbreviations and Notation} \label{appendix-notation}}
+
+\section{Abbreviations}
+
+\begin{description}[leftmargin=!,labelwidth=0.5in,font=\normalfont]
+  \item[CNR]  Control net reduction.
+  \item[CPR]  Control polygon reduction.
+  \item[CRAN] The Comprehensive \proglang{R} Archive Network.
+  \item[DHS]  Daily Hormone Study, a sub-study of SWAN.
+  \item[DLT]  Day of Luteal Transition.
+  \item[PDG]  Prognanediol-glucuronid, is the urine metabolite of progesterone.
+  \item[SWAN] The Study of Women's Health Across the Nation.  
+  \item[TTM]  Time-to-menopause
+\end{description}
+
+\section{Mathematic Notation}
+
+\subsection{General Notation}
+
+\begin{description}[leftmargin=!, labelwidth=0.7in]
+  \item[$x$]             italicized, Roman or Greek letter, denotes a scalar values 
+  \item[$\bs{x}$]        italicized, bold, lowercase Roman or Greek letter, denotes a column vector or set.
+  \item[$\bs{X}$]        italicized, bold, uppercase Roman or Greek letter, denotes a matrix or set.
+  \item[$\card{\bs{x}}$] cardinality, number of elements, of the vector or set $\bs{x}$ 
+  \item[$x \in (a, b)$]  the value $x$ is within the interval such that $a < x < b$
+  \item[{$x \in (a, b]$}]  the value $x$ is within the interval such that $a < x \leq b$
+  \item[$x \in [a, b)$]  the value $x$ is within the interval such that $a \leq x < b$
+  \item[{$x \in [a, b]$}]  the value $x$ is within the interval such that $a \leq x \leq b$ 
+  \item[$1_{A}\left(x\right)$] the indicator function,\[1_{A}\left(x \right) = \begin{cases} 1 & x \in A \\ 0 & x \notin A \end{cases}.\] 
+  \item[$\bs{1}_n$] an column vector of $n$ $1$s
+  \item[$\bs{I}$] the identity matrix
+  \item[$\bs{I}_n$] the $n \times n$ identity matrix
+  \item[$\bs{X}^{-1}$] the inverse matrix, that is, $\bs{X}^{-1} \bs{X} = \bs{I}.$
+  \item[$\bs{X}^{T}$] transpose
+  \item[$\otimes$] Kronecker product
+  \item[$\odot$] element-wise multiplication
+\end{description}
+
+\subsection{Sets}
+
+\begin{description}[leftmargin=!, labelwidth=0.8in]
+  \item[$\{x, y, z, \ldots\}$]  The set comprising the elements of $x,$ $y,$ $z,$ $\ldots$ 
+  \item[$\{x, y, z\} \backslash x$]  The set comprising the elements of $y$ and $z,$ that is, the backslash removes elements from the set.
+  \item[$\left\{x_i\right\}_{i = 1}^{n}$]  The set comprising the elements of $x_1, x_2, x_3, \ldots, x_n.$ 
+  \item[$\mathbb{R}$] Set of real numbers 
+  \item[$\bs{x} \in \mathbb{R}^n$] $\bs{x}$ is a vector with $n$ elements, all of which are real numbers.
+\end{description}
+
+\subsection{Statistical Distributions}
+\begin{description}[leftmargin=!, labelwidth=0.8in]
+  \item[$\mathcal{N} \left( \mu, \sigma^2 \right)$] the uni-variable Gaussian distribution with mean $\mu$ and variance $\sigma^2.$ 
+  \item[$\mathcal{N} \left( \bs{\mu}, \bs{\Sigma} \right)$] the multi-variable Gaussian distribution with mean vector $\bs{\mu}$ and variance-covariance matrix $\bs{\Sigma}.$
+  \item[$\phi(x)$] The standard Gaussian density function.
+\end{description}
+
+% ---------------------------------------------------------------------------- %
+% additional appendices
+\input{appendix01}
+
+% ---------------------------------------------------------------------------- %
+\end{document}
+% ---------------------------------------------------------------------------- %

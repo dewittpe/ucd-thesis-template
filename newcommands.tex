@@ -1,0 +1,40 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% newcommands.tex
+
+% itemize with the explaining text left justified afer the item
+% Example:
+%   \itembox{CNR} The Control net reduction
+%   \itembox{A} Another item
+% renders as
+% * CNR   The Control net reduction
+% * A     Another item
+\newcommand{\itembox}[1]{\item {\makebox[0.80in]{#1 \hfill}}}
+
+% Abbreviations 
+\newcommand{\ie}{{\itshape i.e.}}
+\newcommand{\eg}{{\itshape e.g.}}
+
+% Bold symbols
+\newcommand{\bs}[1]{\boldsymbol{#1}}
+
+% Cardinality
+\newcommand{\card}[1]{n\left(#1\right)} %{\left|#1\right|}
+
+% Math Operators
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator{\logit}{logit}
+\DeclareMathOperator{\invlogit}{logit^{-1}}
+\DeclareMathOperator{\E}{E}
+
+% commands defined for Journal of Statistical Software, if not already defined
+\makeatletter
+\@ifundefined{proglang}{%
+  \let\proglang=\textsf
+  \newcommand{\pkg}[1]{{\fontseries{b}\selectfont #1}}
+  \newcommand\code{\bgroup\@makeother\_\@makeother\~\@makeother\$\@codex}
+  \def\@codex#1{{\normalfont\ttfamily\hyphenchar\font=-1 #1}\egroup}
+}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
