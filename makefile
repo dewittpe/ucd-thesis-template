@@ -5,10 +5,10 @@ APPENDIX = $(shell find . -type f -name 'appendix*.tex')
 
 all: dissertation.pdf dissertation-coadvisors.pdf
 
-dissertation.pdf: dissertation.tex $(CHAPTERS) $(APPENDIX)
+dissertation.pdf: dissertation.tex $(CHAPTERS) $(APPENDIX) newcommands.tex ucdenver-dissertation.cls
 	latexmk -gg -pdf -bibtex dissertation.tex
 
-dissertation-coadvisors.pdf: dissertation-coadvisors.tex $(CHAPTERS) $(APPENDIX)
+dissertation-coadvisors.pdf: dissertation-coadvisors.tex $(CHAPTERS) $(APPENDIX) newcommands.tex ucdenver-dissertation-coadvisors.cls
 	latexmk -gg -pdf -bibtex dissertation-coadvisors.tex
 
 clean:
