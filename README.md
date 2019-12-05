@@ -1,5 +1,7 @@
 # University of Colorado Denver | Anschutz Medical Campus Ph.D. Thesis Template
 
+[![Build Status](https://travis-ci.com/dewittpe/ucd-thesis-template.svg?branch=master)](https://travis-ci.com/dewittpe/ucd-thesis-template)
+
 This work is based on the `.cls` that Peter DeWitt used for his dissertation,
 and is based on the `.cls` file written by Sarah Kreidler
 github.com/dewittpe/ucd-dissertation-template.
