@@ -1,0 +1,6 @@
+dist: bionic
+
+script:
+  - make clean
+  - make -B
+
