@@ -1,9 +1,10 @@
+sudo: require
 dist: bionic
-
-language: minimal
+language: bash
 
 before_install:
-  - sudo apt install texlive-latex-extra
+  - sudo apt-get -qq update
+  - sudo apt-get install -y texlive-base texlive-latex-base texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra
 
 script:
   - make clean
